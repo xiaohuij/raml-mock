@@ -27,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/xiaohuij/raml-mock"
+    "url": "git+ssh://git@github.com:xiaohuij/raml-mock.git"
   },
   "keywords": [
     "mock",
