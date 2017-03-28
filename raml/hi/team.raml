@@ -1,0 +1,14 @@
+get:
+  responses:
+    200:
+      body:
+        application/json:
+          example: !include ../../sample/hi/team.json
+
+/{stream}:
+  get:
+    responses:
+      200:
+        body:
+          text/plain:
+            example: ThoughtWorks

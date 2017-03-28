@@ -1,0 +1,39 @@
+{
+  "name": "raml-mock",
+  "version": "1.0.0",
+  "description": "Mock server and api contract management following raml 1.0",
+  "dependencies": {
+    "concurrently": "^3.4.0",
+    "npm-watch": "^0.1.8"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.0",
+    "osprey-mock-service": "^0.2.0",
+    "raml2html": "^6.1.0"
+  },
+  "watch": {
+    "yield": {
+      "patterns": ["**"],
+      "extensions": "json,raml",
+      "quiet": true
+    }
+  },
+  "scripts": {
+    "yield": "raml2html api.raml > api.html",
+    "live": "live-server --port=4700 --host=localhost --watch=api.html --entry-file=api.html",
+    "watch": "npm-watch",
+    "mock": "osprey-mock-service -f api.raml -p 4600 --cors",
+    "start": "concurrently --kill-others \"npm run live\" \"npm run watch\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:xiaohuij/raml-mock.git"
+  },
+  "keywords": [
+    "mock",
+    "api"
+  ],
+  "author": "xiaohui",
+  "license": "ISC",
+  "homepage": "https://github.com/xiaohuij/raml-mock#README"
+}

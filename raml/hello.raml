@@ -1,0 +1,16 @@
+get:
+  responses:
+    200:
+      body:
+        application/json:
+          type: |
+            {
+              "title": "Hello",
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string"
+                }
+              }
+            }
+          example: !include ../sample/hello.json
